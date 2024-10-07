@@ -1,4 +1,4 @@
-package test;
+package test.tips;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;

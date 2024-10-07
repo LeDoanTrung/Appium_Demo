@@ -1,8 +1,7 @@
-package test;
+package test.apiLearning;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
-
 import org.openqa.selenium.WebElement;
 import utils.AppiumDriverEx;
 
@@ -20,7 +19,7 @@ public class clickOnElement {
            username.sendKeys("trungletest@gmail.com");
 
            WebElement password = appiumDriver.findElement(MobileBy.AccessibilityId("input-password"));
-           password.sendKeys("123456");
+        password.sendKeys("123456789");
 
            WebElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
            loginButton.click();
