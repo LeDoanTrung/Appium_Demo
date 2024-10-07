@@ -27,7 +27,7 @@ public class AppiumDriverEx {
 
         //Setup the APpium Server URL to connect
         try {
-            URL appiumServerURL = new URL("http://192.168.217.22:4723");
+            URL appiumServerURL = new URL("http://localhost:4723");
 
             appiumDriver = new AppiumDriver(appiumServerURL, desiredCapabilities);
             appiumDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
