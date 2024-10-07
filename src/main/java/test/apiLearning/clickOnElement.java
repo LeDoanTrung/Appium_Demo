@@ -19,7 +19,7 @@ public class clickOnElement {
            username.sendKeys("trungletest@gmail.com");
 
            WebElement password = appiumDriver.findElement(MobileBy.AccessibilityId("input-password"));
-        password.sendKeys("123456789");
+           password.sendKeys("123456789");
 
            WebElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
            loginButton.click();

@@ -1,19 +1,23 @@
-package utils;
+package test.apiLearning;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.MobileCapabilityTypeEx;
+import utils.SwipeAction;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class AppiumDriverEx {
+public class SwipeHorizontally {
+    public static void main(String[] args) throws InterruptedException {
 
-    public static AndroidDriver getAppiumDriver() {
-        //Driver Instance
+        // Desired Capabilities để thiết lập thông tin cho session Appium
         AndroidDriver appiumDriver = null;
 
         //Set Desired Capabilities to send to Appium Server
@@ -37,6 +41,20 @@ public class AppiumDriverEx {
             e.printStackTrace();
         }
 
-        return appiumDriver;
+        // Click on the Swipe label
+        WebDriverWait wait = new WebDriverWait(appiumDriver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElement(MobileBy.AccessibilityId("Swipe"))));
+        WebElement swipeLabel = appiumDriver.findElement(MobileBy.AccessibilityId("Swipe"));
+        swipeLabel.click();
+
+        //Make sure I'm on the target screen
+        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElement(MobileBy.xpath("//android.widget.TextView[@text=\"Swipe horizontal\"]"))));
+
+        //Swipe horizontally
+        SwipeAction swipeAction = new SwipeAction(appiumDriver);
+        swipeAction.swipeToRight(5);
+        swipeAction.swipeToLeft(5);
+
+
     }
 }

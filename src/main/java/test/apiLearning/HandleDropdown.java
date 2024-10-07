@@ -2,6 +2,7 @@ package test.apiLearning;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import utils.AppiumDriverEx;
@@ -9,7 +10,7 @@ import utils.AppiumDriverEx;
 public class HandleDropdown {
     public static void main(String[] args) {
         //Driver Instance
-        AppiumDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
 
         //Click on the Form label
         WebElement formLabel = appiumDriver.findElement(MobileBy.AccessibilityId("Forms"));

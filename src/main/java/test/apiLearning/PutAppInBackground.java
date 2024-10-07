@@ -1,17 +1,18 @@
 package test.apiLearning;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import utils.AppiumDriverEx;
 
-public class GetValue {
+import java.time.Duration;
+
+public class PutAppInBackground {
     public static void main(String[] args) {
-        //Driver Instance
+        //Init a session with Appium server
         AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
 
-        //Set Desired Capabilities to send to Appium Server
+        //Go to login form
         WebElement loginLabel = appiumDriver.findElement(MobileBy.accessibilityId("Login"));
         loginLabel.click();
 
@@ -24,12 +25,9 @@ public class GetValue {
         WebElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
         loginButton.click();
 
-        //Get the title form the dialog
-        WebElement successTitle = appiumDriver.findElement(MobileBy.xpath("//android.widget.TextView[@text='Success']"));
-        if (successTitle.isDisplayed() && "Success".equals(successTitle.getText())) {
-            System.out.println("Dialog title is displayed and the text is 'Success'");
-        } else {
-            System.out.println("Dialog title is not displayed or the text is not 'Success'");
-        }
+        //Put the app in the background => Simulate the user's behavior when they press to the home button
+        appiumDriver.runAppInBackground(Duration.ofSeconds(5));
+
+        //Gonna do some more steps here on another app
     }
 }

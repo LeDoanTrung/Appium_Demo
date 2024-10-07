@@ -2,13 +2,14 @@ package test.apiLearning;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import utils.AppiumDriverEx;
 
 public class setValue {
     public static void main(String[] args) {
         //1. Launch the target app
-        AppiumDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
         //2. Click on the Login label
         WebElement loginLabel = appiumDriver.findElement(MobileBy.AccessibilityId("Login"));
         loginLabel.click();

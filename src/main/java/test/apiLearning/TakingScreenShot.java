@@ -2,6 +2,7 @@ package test.apiLearning;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,7 +16,7 @@ public class TakingScreenShot {
     public static void main(String[] args) {
 
         //create a session first
-        AppiumDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
 
         //navigate to forms screen
         WebElement formLabel = appiumDriver.findElement(MobileBy.AccessibilityId("Forms"));

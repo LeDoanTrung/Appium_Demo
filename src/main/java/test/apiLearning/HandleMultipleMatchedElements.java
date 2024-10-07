@@ -2,6 +2,7 @@ package test.apiLearning;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +14,7 @@ import java.util.List;
 public class HandleMultipleMatchedElements {
     public static void main(String[] args) {
         //Start an Appium Server
-        AppiumDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
         WebDriverWait wait = new WebDriverWait(appiumDriver, Duration.ofSeconds(30));
         //Click on the Login label
         WebElement loginLabel = appiumDriver.findElement(MobileBy.AccessibilityId("Login"));
