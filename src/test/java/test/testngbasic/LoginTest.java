@@ -3,7 +3,6 @@ package test.testngbasic;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import utils.AppiumDriverEx;
 

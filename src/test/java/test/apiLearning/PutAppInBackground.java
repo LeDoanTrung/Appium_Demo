@@ -1,18 +1,18 @@
-package test.testngbasic;
+package test.apiLearning;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
 import utils.AppiumDriverEx;
 
-public class LoginTest {
+import java.time.Duration;
 
-    @Test
-    public  void LoginWithValidCredentials() {
+public class PutAppInBackground {
+    public static void main(String[] args) {
+        //Init a session with Appium server
         AndroidDriver appiumDriver = AppiumDriverEx.getAppiumDriver();
 
+        //Go to login form
         WebElement loginLabel = appiumDriver.findElement(MobileBy.accessibilityId("Login"));
         loginLabel.click();
 
@@ -24,5 +24,10 @@ public class LoginTest {
 
         WebElement loginButton = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
         loginButton.click();
+
+        //Put the app in the background => Simulate the user's behavior when they press to the home button
+        appiumDriver.runAppInBackground(Duration.ofSeconds(5));
+
+        //Gonna do some more steps here on another app
     }
 }
